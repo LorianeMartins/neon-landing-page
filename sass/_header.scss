@@ -12,8 +12,72 @@ header {
     }
 
     nav {
+        position: relative;
         display: flex;
         align-items: center;
+
+        .dropdown {
+            position: absolute;
+            top: 4.9rem;
+            left: -13rem;
+            width: 100%;
+            max-width: 37.3rem;
+            background-color: #FFFFFF;
+            border-radius: 0.6rem;
+            padding: 4rem;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(2rem);
+            transition: all .3s;
+
+            &.active {
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0rem);
+            }
+            
+            &:after {
+                content: "";
+                width: 100%;
+                max-width: 29.3rem;
+                height: 0.5rem;
+                border-radius: 1.2rem 1.2rem 0rem 0rem;
+                bottom: 0;
+                position: absolute;
+                background-color: $brand-yellow;
+            }
+
+            .item {
+                cursor: pointer;
+
+                &:not(:last-child) {
+                    margin-bottom: 2.8rem;
+                }
+
+                &:hover {
+                    strong {
+                        color: $brand-blue;
+                    }
+                }
+
+                strong {
+                    display: block;
+                    margin-bottom: 4px;
+                    font-weight: 600;
+                    font-size: 1.6rem;
+                    line-height: 1.9rem;
+                    color: $gray-400;
+                    transition: color .3s;
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    line-height: 150%;
+                    color: $gray-500;
+                }
+            }
+        }
 
         ul {
             display: flex;
@@ -54,6 +118,7 @@ header {
         .logo {
             max-width: 10.8rem;
         }
+
         nav {
             ul {
                 display: none;
@@ -68,6 +133,7 @@ header {
 
     @include responsive(480px) {
         height: 7.3rem;
+
         nav {
             .btn-secundary {
                 display: none;
