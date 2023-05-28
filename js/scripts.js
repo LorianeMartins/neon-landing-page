@@ -11,6 +11,7 @@ function openDropdown (event) {
 btnDropdown.addEventListener('click', openDropdown);
 dropdown.addEventListener('mouseleave', openDropdown);
 
+
 // Menu 
 const header = document.getElementById('js-header');
 
@@ -23,6 +24,18 @@ function fixedMenu() {
 }
 
 document.addEventListener('scroll', fixedMenu);
+
+
+// Menu mobile
+const btnMobile = document.querySelector('.js-btn-mobile');
+const overlay = document.querySelector('.js-overlay');
+
+function openedMenu() {
+  document.documentElement.classList.toggle('menu-opened');
+}
+
+btnMobile.addEventListener('click', openedMenu);
+overlay.addEventListener('click', openedMenu);
 
 
 // Animations
