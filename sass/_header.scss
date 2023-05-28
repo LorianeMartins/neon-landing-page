@@ -6,6 +6,7 @@ header {
     height: 8.8rem;
     display: flex;
     border-bottom: 2px solid rgb(255, 255, 255, 0.2);
+    z-index: 1000;
 
     .container {
         @include flex(row, center, space-between);
@@ -14,7 +15,6 @@ header {
     &.fixed-menu {
         background-color: #FFFFFF;
         box-shadow: 0 0 3rem 0 rgba(0, 0, 0, 0.08);
-        z-index: 1000;
 
         .logo {
             background: url('../assets/img/logo-blue.svg') no-repeat center center;
@@ -70,7 +70,6 @@ header {
             background-color: #FFFFFF;
             border-radius: 0.6rem;
             padding: 4rem;
-            z-index: 100;
             opacity: 0;
             pointer-events: none;
             transform: translateY(2rem);
