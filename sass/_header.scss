@@ -1,5 +1,5 @@
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -9,6 +9,49 @@ header {
 
     .container {
         @include flex(row, center, space-between);
+    }
+
+    &.fixed-menu {
+        background-color: #FFFFFF;
+        box-shadow: 0 0 3rem 0 rgba(0, 0, 0, 0.08);
+        z-index: 1000;
+
+        .logo {
+            background: url('../assets/img/logo-blue.svg');
+        }
+
+        nav {
+            ul {
+                li {
+                    a {
+                        color: $gray-500;
+
+                        &:hover {
+                            color: $brand-blue;
+                        }
+                    }
+                }
+            }
+
+            .btn-secundary {
+                color: $brand-blue;
+                border: 0.1rem solid $brand-blue;
+
+                &:hover {
+                    background-color: $brand-blue;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+
+    .logo {
+        display: inline-block;
+        width: 13.2rem;
+        height: 3rem;
+        background: url('../assets/img/logo.svg') no-repeat center center;
+        background-size: 100%;
+        transition: all .3s;
     }
 
     nav {
@@ -36,7 +79,7 @@ header {
                 pointer-events: all;
                 transform: translateY(0rem);
             }
-            
+
             &:after {
                 content: "";
                 width: 100%;
